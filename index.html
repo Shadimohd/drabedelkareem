@@ -1,1057 +1,96 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عيادة الدكتور عبد الكريم أبو رمضان | استشاري جراحة المسالك البولية وأمراض الذكورة - الرياض</title>
-  <meta name="description" content="عيادة الدكتور عبد الكريم أبو رمضان - استشاري جراحة المسالك البولية والبروستاتا وأمراض الذكورة في الرياض. حجز موعد واتصال مباشر. مجمع الشبلان الطبي - تقاطع شارع العروبة مع شارع المهندس مساعد العنقري." />
-  <meta name="theme-color" content="#0A1931" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#071427;
-      --bg2:#0A1931;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
-      --text:#EAF0FF;
-      --muted:rgba(234,240,255,.75);
-      --border:rgba(255,255,255,.12);
-      --shadow:0 18px 45px rgba(0,0,0,.35);
-      --accent:#18B6C4; /* تركواز طبي */
-      --accent2:#FFC947; /* ذهبي خفيف للـCTA */
-      --danger:#ff5a5f;
-      --radius:18px;
-      --max:1180px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 700px at 70% -10%, rgba(24,182,196,.18), transparent 60%),
-                  radial-gradient(900px 600px at 10% 10%, rgba(255,201,71,.12), transparent 65%),
-                  linear-gradient(180deg, var(--bg), var(--bg2));
-      color:var(--text);
-      line-height:1.85;
-    }
-
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-
-    /* Header */
-    .header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(160%) blur(10px);
-      background:rgba(7,20,39,.6);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:12px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width:230px;
-    }
-    .logo{
-      width:44px; height:44px; border-radius:14px;
-      background:linear-gradient(135deg, rgba(24,182,196,.9), rgba(255,201,71,.9));
-      display:grid; place-items:center;
-      box-shadow:0 14px 30px rgba(0,0,0,.25);
-      border:1px solid rgba(255,255,255,.25);
-      flex:0 0 auto;
-    }
-    .logo span{font-weight:900; color:#071427; font-size:18px}
-    .brand h1{margin:0; font-size:14px; line-height:1.2}
-    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted)}
-
-    .menu{
-      display:flex; align-items:center; gap:12px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .menu a{
-      padding:8px 10px;
-      border-radius:12px;
-      color:rgba(234,240,255,.9);
-      font-size:13px;
-      border:1px solid transparent;
-    }
-    .menu a:hover{border-color:var(--border); background:rgba(255,255,255,.04)}
-    .actions{display:flex; align-items:center; gap:10px; min-width:230px; justify-content:flex-end}
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      font-weight:700;
-      cursor:pointer;
-      transition:.2s transform, .2s background, .2s border;
-      white-space:nowrap;
-      font-size:13px;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06)}
-    .btn.primary{
-      background:linear-gradient(135deg, rgba(255,201,71,.95), rgba(24,182,196,.95));
-      color:#071427;
-      border-color:rgba(255,255,255,.22);
-      box-shadow:0 16px 35px rgba(0,0,0,.25);
-    }
-    .btn.primary:hover{transform:translateY(-2px)}
-    .btn.ghost{background:transparent}
-    .icon{
-      width:18px; height:18px; display:inline-block; flex:0 0 auto;
-      filter:drop-shadow(0 6px 16px rgba(0,0,0,.22));
-    }
-
-    /* Mobile nav */
-    .hamburger{display:none}
-    @media (max-width: 980px){
-      .menu{display:none}
-      .hamburger{display:inline-flex}
-    }
-
-    /* Hero */
-    .hero{
-      padding:34px 0 10px;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr; }
-    }
-    .heroCard{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .heroContent{padding:22px}
-    .tag{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      color:rgba(234,240,255,.9);
-      font-weight:700;
-      font-size:12px;
-      margin-bottom:12px;
-    }
-    .heroTitle{
-      margin:0 0 8px;
-      font-size:30px;
-      line-height:1.25;
-      letter-spacing:.2px;
-    }
-    .heroSub{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:15px;
-    }
-    .bullets{
-      margin:0; padding:0; list-style:none;
-      display:grid; gap:8px;
-    }
-    .bullets li{
-      display:flex; gap:10px; align-items:flex-start;
-      color:rgba(234,240,255,.9);
-      font-size:14px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background:rgba(24,182,196,.95);
-      margin-top:8px;
-      box-shadow:0 10px 20px rgba(24,182,196,.25);
-      flex:0 0 auto;
-    }
-    .heroBtns{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
-    .miniCards{
-      padding:18px;
-      display:grid; gap:10px;
-    }
-    .info{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:12px 12px;
-      display:flex; gap:10px; align-items:flex-start;
-    }
-    .info strong{display:block; font-size:13px}
-    .info span{display:block; color:var(--muted); font-size:13px; line-height:1.55}
-    .heroImage{
-      position:relative;
-      min-height:320px;
-      background:
-        radial-gradient(600px 260px at 70% 20%, rgba(24,182,196,.22), transparent 60%),
-        radial-gradient(700px 360px at 30% 0%, rgba(255,201,71,.16), transparent 55%),
-        url("https://images.unsplash.com/photo-1580281658628-0f0b72d4f2b4?auto=format&fit=crop&w=1400&q=70");
-      background-size:cover;
-      background-position:center;
-    }
-    .heroImageOverlay{
-      position:absolute; inset:0;
-      background:linear-gradient(90deg, rgba(7,20,39,.92), rgba(7,20,39,.55) 45%, rgba(7,20,39,.20));
-    }
-    .heroImageBadge{
-      position:absolute; bottom:14px; right:14px;
-      left:14px;
-      background:rgba(7,20,39,.72);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:12px;
-      display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;
-      backdrop-filter: blur(10px);
-    }
-    .heroImageBadge b{font-size:13px}
-    .heroImageBadge small{color:var(--muted); display:block; font-size:12px}
-
-    /* Sections */
-    section{padding:34px 0}
-    .sectionHead{
-      display:flex; justify-content:space-between; align-items:flex-end;
-      gap:16px; margin-bottom:14px;
-    }
-    .sectionHead h2{margin:0; font-size:22px; line-height:1.2}
-    .sectionHead p{margin:6px 0 0; color:var(--muted); max-width:720px}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
-    }
-    @media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
-    @media (max-width: 560px){ .grid{grid-template-columns:1fr} }
-
-    .card{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:14px;
-      box-shadow:0 14px 34px rgba(0,0,0,.22);
-    }
-    .card h3{margin:0 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:13.5px; line-height:1.8}
-    .card .meta{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
-    .pill{
-      padding:6px 10px; border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      font-size:12px; color:rgba(234,240,255,.86);
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
-
-    /* About */
-    .aboutCard{
-      padding:18px;
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-    }
-    .aboutTop{
-      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
-    }
-    .avatar{
-      width:62px; height:62px; border-radius:18px;
-      background:
-        linear-gradient(135deg, rgba(24,182,196,.9), rgba(255,201,71,.9)),
-        url("https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=600&q=70");
-      background-size:cover; background-position:center;
-      border:1px solid rgba(255,255,255,.28);
-      box-shadow:0 18px 40px rgba(0,0,0,.25);
-      flex:0 0 auto;
-    }
-    .aboutTop h3{margin:0; font-size:18px}
-    .aboutTop p{margin:4px 0 0; color:var(--muted)}
-    .list{
-      margin:12px 0 0; padding:0 18px 0 0;
-      color:rgba(234,240,255,.9);
-    }
-    .list li{margin:7px 0; color:rgba(234,240,255,.88)}
-    .muted{color:var(--muted)}
-
-    /* Articles */
-    .article{
-      overflow:hidden;
-      padding:0;
-    }
-    .articleImg{
-      height:130px;
-      background-size:cover;
-      background-position:center;
-      border-bottom:1px solid var(--border);
-    }
-    .articleBody{padding:14px}
-    .article h3{margin:0 0 6px}
-    .linkRow{
-      margin-top:10px;
-      display:flex; justify-content:space-between; align-items:center;
-      gap:10px;
-    }
-    .readMore{
-      display:inline-flex; gap:8px; align-items:center;
-      font-weight:800; font-size:13px;
-      color:rgba(255,201,71,.95);
-    }
-
-    /* Contact */
-    .contactCard{padding:18px}
-    .form{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:12px;
-    }
-    @media (max-width: 700px){ .form{grid-template-columns:1fr} }
-    label{font-size:12px; color:rgba(234,240,255,.86); font-weight:700}
-    input, textarea, select{
-      width:100%;
-      padding:11px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      outline:none;
-      margin-top:6px;
-      font-family:inherit;
-      font-size:14px;
-    }
-    textarea{min-height:106px; resize:vertical; grid-column:1/-1}
-    .formActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-
-    /* Footer */
-    footer{
-      padding:26px 0 34px;
-      border-top:1px solid var(--border);
-      background:rgba(0,0,0,.12);
-    }
-    .footerGrid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:12px;
-      align-items:start;
-    }
-    @media (max-width: 980px){ .footerGrid{grid-template-columns:1fr} }
-    .small{font-size:12px; color:var(--muted)}
-    .footerLinks{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start}
-    .footerLinks a{
-      padding:6px 10px; border:1px solid var(--border);
-      border-radius:999px; background:rgba(255,255,255,.03);
-      font-size:12px;
-    }
-
-    /* Floating buttons (mobile-friendly) */
-    .floatBar{
-      position:fixed; bottom:14px; left:14px; right:14px;
-      display:none;
-      gap:10px;
-      z-index:60;
-    }
-    .floatBar a{
-      flex:1;
-      padding:12px 14px;
-      border-radius:16px;
-      font-weight:900;
-      text-align:center;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow:0 16px 40px rgba(0,0,0,.35);
-    }
-    .callBtn{background:linear-gradient(135deg, rgba(255,201,71,.95), rgba(255,201,71,.75)); color:#071427}
-    .waBtn{background:linear-gradient(135deg, rgba(24,182,196,.95), rgba(24,182,196,.70)); color:#071427}
-    @media (max-width: 980px){ .floatBar{display:flex} }
-
-    /* Simple mobile menu */
-    .drawer{
-      display:none;
-      border-top:1px solid var(--border);
-      padding:10px 0 14px;
-    }
-    .drawer a{
-      display:block;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.03);
-      margin-top:10px;
-      font-weight:800;
-      font-size:13px;
-    }
-    .drawer a:hover{background:rgba(255,255,255,.05)}
-    .show{display:block !important}
-  </style>
-</head>
-
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"><span>د</span></div>
-          <div>
-            <h1>عيادة الدكتور عبد الكريم أبو رمضان</h1>
-            <p>استشاري جراحة المسالك البولية والبروستاتا وأمراض الذكورة • الرياض</p>
-          </div>
-        </div>
-
-        <nav class="menu" aria-label="القائمة الرئيسية">
-          <a href="#about">عن العيادة</a>
-          <a href="#specialties">التخصصات</a>
-          <a href="#features">مميزات العيادة</a>
-          <a href="#cv">السيرة الذاتية</a>
-          <a href="#articles">مقالات طبية</a>
-          <a href="#contact">اتصل بنا</a>
-        </nav>
-
-        <div class="actions">
-          <button class="btn hamburger" id="menuBtn" aria-expanded="false" aria-controls="drawerMenu">☰ القائمة</button>
-          <a class="btn ghost" href="tel:0114606600" title="اتصال مباشر">
-            📞 اتصال
-          </a>
-          <a class="btn primary" href="#contact" title="حجز موعد">
-            ✨ احجز موعدًا
-          </a>
-        </div>
-      </div>
-
-      <!-- Mobile Drawer -->
-      <div class="drawer" id="drawerMenu">
-        <a href="#about">عن العيادة</a>
-        <a href="#specialties">التخصصات</a>
-        <a href="#features">مميزات العيادة</a>
-        <a href="#cv">السيرة الذاتية</a>
-        <a href="#articles">مقالات طبية</a>
-        <a href="#contact">اتصل بنا</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="heroGrid">
-          <div class="heroCard">
-            <div class="heroContent">
-              <div class="tag">🩺 رعاية طبية متخصصة • خصوصية كاملة • دقة في التشخيص</div>
-              <h2 class="heroTitle">عيادة الدكتور عبد الكريم أبو رمضان</h2>
-              <p class="heroSub">
-                استشاري جراحة المسالك البولية والتناسلية وأمراض الذكورة.
-                عضو الجمعية الأوروبية لزراعة الكلية وجراحة المسالك البولية، وعضو الجمعية الأمريكية للعنانة وأمراض الذكورة.
-              </p>
-
-              <ul class="bullets">
-                <li><span class="dot"></span><span><b>الموقع:</b> مجمع الشبلان الطبي – الرياض</span></li>
-                <li><span class="dot"></span><span><b>العنوان:</b> تقاطع شارع العروبة مع شارع المهندس مساعد العنقري</span></li>
-                <li><span class="dot"></span><span><b>الهاتف:</b> <a href="tel:0114606600">0114606600</a></span></li>
-              </ul>
-
-              <div class="heroBtns">
-                <a class="btn primary" href="#contact">احجز موعدًا الآن</a>
-                <a class="btn" href="tel:0114606600">اتصل الآن</a>
-                <!-- ✅ عدّل رقم الواتساب إن رغبت -->
-                <a class="btn" id="waTop" href="https://wa.me/966114606600?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%85%D8%B9%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%20%D8%A3%D8%A8%D9%88%20%D8%B1%D9%85%D8%B6%D8%A7%D9%86" target="_blank" rel="noopener">واتساب</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="heroCard heroImage" aria-label="صورة مناسبة للعيادة">
-            <div class="heroImageOverlay"></div>
-            <div class="heroImageBadge">
-              <div>
-                <b>مجمع الشبلان الطبي – الرياض</b>
-                <small>تقاطع شارع العروبة مع شارع المهندس مساعد العنقري</small>
-              </div>
-              <a class="btn primary" href="tel:0114606600">📞 0114606600</a>
-            </div>
-          </div>
-
-          <div class="heroCard" style="grid-column:1 / -1;">
-            <div class="miniCards">
-              <div class="grid" style="grid-template-columns:repeat(3,1fr)">
-                <div class="info">
-                  <div class="icon">📍</div>
-                  <div>
-                    <strong>الموقع</strong>
-                    <span>مجمع الشبلان الطبي – الرياض</span>
-                  </div>
-                </div>
-                <div class="info">
-                  <div class="icon">🕒</div>
-                  <div>
-                    <strong>تنظيم المواعيد</strong>
-                    <span>حجز سريع ومتابعة واضحة لحالتك</span>
-                  </div>
-                </div>
-                <div class="info">
-                  <div class="icon">🛡️</div>
-                  <div>
-                    <strong>خصوصية وسرية</strong>
-                    <span>رعاية باحترام تام لخصوصية المرضى</span>
-                  </div>
-                </div>
-              </div>
-              <p class="small" style="margin:10px 0 0">
-                *المعلومات في الموقع للتوعية ولا تغني عن الاستشارة الطبية المباشرة.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>المزيد عن العيادة</h2>
-            <p>رعاية متخصصة في المسالك البولية وأمراض الذكورة مع التزام بالأمانة والثقة، والاهتمام بمتابعة المريض وخطة علاج واضحة.</p>
-          </div>
-          <a class="btn" href="#contact">احجز موعدًا</a>
-        </div>
-
-        <div class="split">
-          <div class="card aboutCard">
-            <div class="aboutTop">
-              <div class="avatar" aria-hidden="true"></div>
-              <div>
-                <h3>د. عبد الكريم أبو رمضان</h3>
-                <p class="muted">استشاري جراحة المسالك البولية والبروستاتا وأمراض الذكورة</p>
-              </div>
-            </div>
-
-            <ul class="list">
-              <li>عضو الجمعية الأوروبية لزراعة الكلية وجراحة المسالك البولية</li>
-              <li>عضو الجمعية الأمريكية للعنانة وأمراض الذكورة</li>
-              <li>خبرة سريرية متقدمة وخيارات علاج حديثة</li>
-            </ul>
-
-            <div class="meta">
-              <span class="pill">الرياض</span>
-              <span class="pill">مجمع الشبلان الطبي</span>
-              <span class="pill">مواعيد منظمة</span>
-            </div>
-          </div>
-
-          <div class="card aboutCard" style="background:linear-gradient(180deg, rgba(24,182,196,.10), rgba(255,255,255,.03));">
-            <h3 style="margin-top:0">موقع العيادة</h3>
-            <p class="muted" style="margin-top:0">
-              مجمع الشبلان الطبي – الرياض<br>
-              تقاطع شارع العروبة مع شارع المهندس مساعد العنقري
-            </p>
-
-            <!-- ✅ ضع رابط Google Maps الحقيقي هنا إن رغبت -->
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="tel:0114606600">اتصل الآن</a>
-              <a class="btn" href="#contact">حجز موعد</a>
-              <a class="btn" href="https://maps.google.com/?q=%D9%85%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D8%B4%D8%A8%D9%84%D8%A7%D9%86%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" target="_blank" rel="noopener">فتح في خرائط Google</a>
-            </div>
-
-            <p class="small" style="margin-top:14px">
-              ملاحظة: يمكنك إضافة ساعات العمل هنا (مثال: يوميًا 4م–10م) حسب نظام العيادة.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Specialties -->
-    <section id="specialties">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>التخصصات والخدمات العلاجية</h2>
-            <p>العيادة متخصصة في تشخيص وعلاج أمراض المسالك البولية والتناسلية وأمراض الذكورة، مع توفير خيارات علاجية حديثة وجراحات متقدمة عند الحاجة.</p>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>علاج العجز الجنسي وتركيب جهاز الانتصاب الصناعي</h3>
-            <p>عند فشل الأدوية في تحقيق الانتصاب والصلابة المطلوبة، يمكن استعادة الوظيفة عبر الجراحة وتركيب الدعامة. غالبًا تُجرى كجراحة يوم واحد دون مبيت.</p>
-          </div>
-
-          <div class="card">
-            <h3>علاج الضعف الجنسي لمرضى السكري وكبار السن</h3>
-            <p>علاجات آمنة وفعّالة بإشراف الطبيب، مع ضرورة تقييم الحالة ومراجعة الأدوية المستخدمة—خصوصًا أدوية “النيترات” لتجنب التعارض.</p>
-          </div>
-
-          <div class="card">
-            <h3>علاج تأخر الإنجاب وجراحة دوالي الخصية</h3>
-            <p>دوالي الخصية قد تكون بلا أعراض، لكنها قد ترتبط بتأخر الإنجاب. يتم التقييم ووضع خطة علاج مناسبة وقد تُحسن فرص الحمل في حالات عديدة.</p>
-          </div>
-
-          <div class="card">
-            <h3>علاج التهابات البروستاتا والأمراض التناسلية</h3>
-            <p>العلاج يعتمد على تحديد السبب ونوع الالتهاب (حاد/مزمن) واختيار الخطة المناسبة للجرعة والمدة، وقد تتطلب بعض الحالات الحادة رعاية مكثفة في البداية.</p>
-          </div>
-
-          <div class="card">
-            <h3>جراحة الأورام والعيوب الخلقية والجراحات التجميلية</h3>
-            <p>تشخيص وعلاج أورام الجهاز البولي والتناسلي، والعيوب الخلقية، وإجراء الجراحات الترميمية/التجميلية حسب الحاجة الطبية.</p>
-          </div>
-
-          <div class="card">
-            <h3>ديناميكا البول وتقييم وظائف المثانة وقاع الحوض</h3>
-            <p>فحوصات ديناميكا البول لتقييم المثانة ومجرى البول وعضلات قاع الحوض، للمساعدة في تحديد العلاج الأنسب لحالات مثل صعوبات التبول والسلس.</p>
-          </div>
-
-          <div class="card">
-            <h3>علاج الالتهابات البولية والسلس والتبول الليلي</h3>
-            <p>تشخيص أسباب السلس والتبول الليلي ووضع خطة علاجية حسب السبب والعمر وطبيعة الأعراض.</p>
-          </div>
-
-          <div class="card">
-            <h3>علاج الاضطرابات الجنسية وفحوصات ما قبل الزواج</h3>
-            <p>تقييم شامل للأسباب العضوية والنفسية التي قد تؤثر على الوظيفة الجنسية مع توجيه علاجي مناسب، بالإضافة إلى فحوصات ما قبل الزواج.</p>
-          </div>
-
-          <div class="card">
-            <h3>جراحة تضخم البروستاتا بالمنظار والليزر</h3>
-            <p>علاج تضخم البروستاتا باستخدام المنظار/الليزر لإزالة الجزء المتضخم وتوسيع مجرى البول، بما يساعد على تحسن الأعراض وسرعة التعافي.</p>
-          </div>
-
-          <div class="card">
-            <h3>علاج وتفتيت حصوات الكلى والحالب والمثانة</h3>
-            <p>تقييم حجم ومكان الحصوة واختيار العلاج الأنسب (متابعة/أدوية/تفتيت/منظار) حسب الحالة، مع التركيز على الخيارات الأقل تدخّلًا متى أمكن.</p>
-          </div>
-
-          <div class="card">
-            <h3>الجراحة الميكروسكوبية لأمراض الخصية وانسداد الحبل المنوي</h3>
-            <p>تقنيات جراحية دقيقة (ميكروسكوبية) لحالات تأخر الإنجاب وبعض أمراض الخصية والانسداد، بعد تقييم شامل للحالة.</p>
-          </div>
-
-          <div class="card">
-            <h3>ختان الأطفال بدون ألم أو نزيف + مناظير المثانة والحالبين</h3>
-            <p>إجراءات آمنة باستخدام تقنيات مناسبة، ومناظير للتشخيص والعلاج غالبًا كإجراءات خارجية دون مبيت.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="#contact">احجز موعدًا</a>
-          <a class="btn" href="tel:0114606600">اتصل للاستفسار</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>مميزات العيادة</h2>
-            <p>لماذا عيادة الدكتور عبد الكريم أبو رمضان؟ لأننا نركز على الجودة، المتابعة، ودقة الإجراءات، مع احترام خصوصية المريض.</p>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>🛡️ الأمانة والثقة</h3>
-            <p>نضع مصلحة المريض أولًا، ونعتمد الشفافية في التشخيص وخيارات العلاج بهدف تحسين جودة الحياة وبناء ثقة مستمرة.</p>
-          </div>
-          <div class="card">
-            <h3>🤝 المتابعة والاهتمام</h3>
-            <p>نهتم بمتابعة المريض بعد التشخيص والعلاج، مع الالتزام بمعايير السلامة الطبية والتعليم والتدريب المستمر.</p>
-          </div>
-          <div class="card">
-            <h3>⏱️ دقة المواعيد</h3>
-            <p>نحترم وقت المرضى وننظم المواعيد بدقة، مع مراجعات داخلية مستمرة لتحسين الخدمة والتجربة.</p>
-          </div>
-          <div class="card">
-            <h3>🎯 الكفاءة والدقة</h3>
-            <p>نوفر وسائل علاجية وجراحية حديثة مع بروتوكولات سريرية واضحة لتحقيق أفضل النتائج الطبية الممكنة.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CV -->
-    <section id="cv">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>السيرة الذاتية</h2>
-            <p>خبرة متخصصة في جراحة المسالك البولية والبروستاتا وأمراض الذكورة، مع مؤهلات أكاديمية ومهنية متنوعة.</p>
-          </div>
-        </div>
-
-        <div class="split">
-          <div class="card aboutCard">
-            <h3 style="margin-top:0">نبذة</h3>
-            <p class="muted">
-              الدكتور عبد الكريم أبو رمضان استشاري جراحة مسالك بولية وبروستاتا وأمراض الذكورة. يقدم رعاية طبية متخصصة ترتكز على المريض وخطة علاج واضحة.
-            </p>
-
-            <div class="meta">
-              <span class="pill">استشاري</span>
-              <span class="pill">مسالك بولية</span>
-              <span class="pill">أمراض الذكورة</span>
-            </div>
-
-            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="#contact">احجز موعدًا</a>
-              <a class="btn" href="tel:0114606600">اتصل الآن</a>
-            </div>
-          </div>
-
-          <div class="card aboutCard">
-            <h3 style="margin-top:0">المؤهلات المهنية</h3>
-            <ul class="list">
-              <li>استشاري جراحة المسالك البولية – كلية طب برشلونة</li>
-              <li>مشرف على تدريب الأطباء المقيمين في جراحة المسالك البولية</li>
-              <li>استشاري جراحة المسالك البولية وأمراض الذكورة – مستشفى الحمادي بالرياض</li>
-              <li>استشاري جراحة المسالك البولية وأمراض الذكورة – عيادة خاصة</li>
-              <li>استشاري جراحة المسالك البولية وأمراض الذكورة – مركز نجوم الصحة الطبي بالرياض</li>
-            </ul>
-          </div>
-
-          <div class="card aboutCard">
-            <h3 style="margin-top:0">المؤهلات الأكاديمية</h3>
-            <ul class="list">
-              <li>بكالوريوس الطب والجراحة – كلية طب برشلونة</li>
-              <li>دكتوراه في جراحة المسالك البولية – كلية طب برشلونة</li>
-              <li>خبرة متقدمة في علاج وأمراض الذكورة في المستشفيات الأمريكية</li>
-              <li>خبرة في زراعة الكلى – مستشفى نيكير (Necker)، باريس</li>
-            </ul>
-          </div>
-
-          <div class="card aboutCard">
-            <h3 style="margin-top:0">التخصصات الطبية</h3>
-            <ul class="list">
-              <li>علاج الضعف الجنسي وتركيب الأجهزة التعويضية</li>
-              <li>علاج الاضطرابات الجنسية وفحوصات ما قبل الزواج</li>
-              <li>تشخيص وعلاج أورام الجهاز البولي السرطانية</li>
-              <li>الجراحات التجميلية والتشوهات الخلقية للجهاز التناسلي</li>
-              <li>جراحة تضخم البروستاتا</li>
-              <li>تفتيت حصوات الكلى والحالب والمثانة</li>
-              <li>التهابات البروستاتا والأمراض التناسلية</li>
-              <li>السلس البولي ومناظير المثانة والحالبين وختان الأطفال</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Articles -->
-    <section id="articles">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>مقالات طبية</h2>
-            <p>محتوى توعوي مبسّط يساعدك على فهم الأعراض والأسباب وخيارات التشخيص والعلاج. (يمكن لاحقًا جعل كل بطاقة تفتح صفحة مقال كاملة).</p>
-          </div>
-        </div>
-
-        <div class="grid">
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>البروستاتا</h3>
-              <p>تعمل البروستاتا على إفراز جزء من السائل المنوي بالاشتراك مع غدة كوبر، وتحيط بها شبكة أوردة لها دور مهم في تدفق الدم أثناء الانتصاب.</p>
-              <div class="linkRow">
-                <span class="pill">توعية</span>
-                <a class="readMore" href="#contact">استشارة <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1581595219315-a1b2b8b79f88?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>سلس البول</h3>
-              <p>سلس البول هو نزول لا إرادي للبول، وقد يرتبط بضعف عضلات قاع الحوض أو مشاكل في الجهاز البولي. التشخيص الدقيق يساعد في اختيار العلاج.</p>
-              <div class="linkRow">
-                <span class="pill">أعراض شائعة</span>
-                <a class="readMore" href="#contact">احجز تقييم <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>الضعف الجنسي</h3>
-              <p>هو عدم القدرة على تحقيق أو الحفاظ على الانتصاب. قد تتداخل عوامل العمر والهرمونات والأمراض المزمنة، لذا يلزم تقييم شامل وخطة علاج.</p>
-              <div class="linkRow">
-                <span class="pill">الذكورة</span>
-                <a class="readMore" href="#contact">استفسار <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1589758438368-0ad531db3366?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>سرعة القذف</h3>
-              <p>مشكلة شائعة لدى الرجال، تتمثل في صعوبة التحكم الإرادي بعملية القذف. تتوفر خيارات علاج متعددة حسب السبب ونمط الحياة.</p>
-              <div class="linkRow">
-                <span class="pill">شائع</span>
-                <a class="readMore" href="#contact">خطة علاج <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>السيلان</h3>
-              <p>مرض منقول جنسيًا يسبب حرقة أثناء التبول وإفرازات. التشخيص المبكر والعلاج الصحيح يساعدان على تجنب المضاعفات.</p>
-              <div class="linkRow">
-                <span class="pill">وقاية</span>
-                <a class="readMore" href="#contact">فحص <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>الزهري</h3>
-              <p>أحد الأمراض المنقولة جنسيًا وقد يسبب مضاعفات خطيرة إذا أُهمل. الكشف المبكر والعلاج الدوائي تحت إشراف طبي مهم جدًا.</p>
-              <div class="linkRow">
-                <span class="pill">تنبيه</span>
-                <a class="readMore" href="#contact">استشارة <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1585435421671-0c1676460e66?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>مرض الكلى المزمن</h3>
-              <p>فقدان تدريجي لوظائف الكلى على مدى شهور أو سنوات. المتابعة المبكرة تساعد على إبطاء التدهور وتقليل الأعراض.</p>
-              <div class="linkRow">
-                <span class="pill">متابعة</span>
-                <a class="readMore" href="#contact">تقييم <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card article">
-            <div class="articleImg" style="background-image:url('https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=1200&q=70');"></div>
-            <div class="articleBody">
-              <h3>العقم</h3>
-              <p>خلل يؤثر على القدرة على الإنجاب. التقييم الدقيق وتحاليل الخصوبة تساعد في تحديد السبب واختيار العلاج الأنسب.</p>
-              <div class="linkRow">
-                <span class="pill">خصوبة</span>
-                <a class="readMore" href="#contact">حجز موعد <span>↩</span></a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="small" style="margin-top:12px">
-          *يمكنك لاحقًا إضافة صفحات مستقلة لكل مقال لتحسين الظهور في Google (SEO).
-        </p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="sectionHead">
-          <div>
-            <h2>اتصل بنا / حجز موعد</h2>
-            <p>للحجز أو الاستفسار: اتصل مباشرة أو أرسل طلب موعد عبر النموذج. سنقوم بالتواصل معك بأقرب وقت.</p>
-          </div>
-          <a class="btn" href="tel:0114606600">📞 0114606600</a>
-        </div>
-
-        <div class="split">
-          <div class="card contactCard">
-            <h3 style="margin-top:0">معلومات التواصل</h3>
-            <div class="info" style="margin-top:12px;">
-              <div class="icon">📞</div>
-              <div>
-                <strong>الهاتف</strong>
-                <span><a href="tel:0114606600">011-460-6600</a></span>
-              </div>
-            </div>
-
-            <div class="info" style="margin-top:10px;">
-              <div class="icon">✉️</div>
-              <div>
-                <strong>البريد الإلكتروني</strong>
-                <!-- ✅ عدّل البريد هنا إلى البريد الصحيح الكامل -->
-                <span><a href="mailto:DrAbedalkareem@yourdomain.com">DrAbedalkareem@yourdomain.com</a></span>
-              </div>
-            </div>
-
-            <div class="info" style="margin-top:10px;">
-              <div class="icon">📍</div>
-              <div>
-                <strong>العنوان</strong>
-                <span>مجمع الشبلان الطبي – الرياض<br>تقاطع شارع العروبة مع شارع المهندس مساعد العنقري</span>
-              </div>
-            </div>
-
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="https://maps.google.com/?q=%D9%85%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D8%B4%D8%A8%D9%84%D8%A7%D9%86%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" target="_blank" rel="noopener">فتح الخريطة</a>
-              <a class="btn" href="https://wa.me/966114606600?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%AA%D9%83%D9%85" target="_blank" rel="noopener">واتساب</a>
-            </div>
-
-            <p class="small" style="margin-top:14px">
-              تنويه: هذا النموذج لطلب موعد فقط، وسيتم تأكيد الموعد عبر الاتصال/الرسائل.
-            </p>
-          </div>
-
-          <div class="card contactCard" style="background:linear-gradient(180deg, rgba(255,201,71,.10), rgba(255,255,255,.03));">
-            <h3 style="margin-top:0">نموذج طلب موعد</h3>
-
-            <!-- نموذج يرسل إلى واتساب (بدون سيرفر) -->
-            <form class="form" id="apptForm">
-              <div>
-                <label for="name">الاسم</label>
-                <input id="name" name="name" placeholder="اكتب اسمك" required>
-              </div>
-              <div>
-                <label for="phone">رقم الجوال</label>
-                <input id="phone" name="phone" placeholder="مثال: 05xxxxxxxx" required>
-              </div>
-              <div>
-                <label for="topic">سبب الزيارة</label>
-                <select id="topic" name="topic" required>
-                  <option value="" selected disabled>اختر</option>
-                  <option>استشارة مسالك بولية</option>
-                  <option>البروستاتا</option>
-                  <option>حصوات الكلى/الحالب</option>
-                  <option>الضعف الجنسي</option>
-                  <option>تأخر الإنجاب / دوالي الخصية</option>
-                  <option>التهابات بولية / بروستاتا</option>
-                  <option>فحوصات ما قبل الزواج</option>
-                  <option>أخرى</option>
-                </select>
-              </div>
-              <div>
-                <label for="time">الوقت المفضل</label>
-                <select id="time" name="time" required>
-                  <option value="" selected disabled>اختر</option>
-                  <option>صباحًا</option>
-                  <option>مساءً</option>
-                  <option>أي وقت</option>
-                </select>
-              </div>
-
-              <textarea id="msg" name="msg" placeholder="اكتب ملاحظات إضافية (اختياري)"></textarea>
-
-              <div class="formActions" style="grid-column:1/-1;">
-                <button class="btn primary" type="submit">إرسال الطلب عبر واتساب</button>
-                <a class="btn" href="tel:0114606600">اتصال مباشر</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footerGrid">
-          <div>
-            <div class="brand" style="min-width:auto; margin-bottom:8px;">
-              <div class="logo" aria-hidden="true"><span>د</span></div>
-              <div>
-                <h1 style="font-size:13px; margin:0;">عيادة الدكتور عبد الكريم أبو رمضان</h1>
-                <p style="margin:2px 0 0; font-size:12px;">مسالك بولية • بروستاتا • أمراض الذكورة • الرياض</p>
-              </div>
-            </div>
-            <p class="small">
-              © 2018–2025 Dr-Abedelkareem.com جميع الحقوق محفوظة.<br>
-              <b>تنويه طبي:</b> المحتوى للتوعية ولا يغني عن الاستشارة الطبية.
-            </p>
-          </div>
-
-          <div>
-            <div class="footerLinks">
-              <a href="#about">عن العيادة</a>
-              <a href="#specialties">التخصصات</a>
-              <a href="#features">المميزات</a>
-              <a href="#cv">السيرة الذاتية</a>
-              <a href="#articles">المقالات</a>
-              <a href="#contact">اتصل بنا</a>
-            </div>
-            <p class="small" style="margin-top:12px;">
-              تطوير الواجهة: نسخة حديثة قابلة للتوسّع (صفحات مقالات، نظام حجز، لوحة إدارة…).
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- Floating Call/WhatsApp for Mobile -->
-  <div class="floatBar" aria-label="أزرار سريعة">
-    <a class="callBtn" href="tel:0114606600">اتصال الآن</a>
-    <a class="waBtn" href="https://wa.me/966114606600?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%20%D8%A3%D8%A8%D9%88%20%D8%B1%D9%85%D8%B6%D8%A7%D9%86" target="_blank" rel="noopener">واتساب</a>
-  </div>
-
-  <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const drawer = document.getElementById('drawerMenu');
-    if (menuBtn && drawer) {
-      menuBtn.addEventListener('click', () => {
-        const open = drawer.classList.toggle('show');
-        menuBtn.setAttribute('aria-expanded', String(open));
-      });
-
-      // close drawer when clicking a link
-      drawer.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          drawer.classList.remove('show');
-          menuBtn.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // Appointment form -> WhatsApp message (no backend needed)
-    const form = document.getElementById('apptForm');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = (document.getElementById('name').value || '').trim();
-        const phone = (document.getElementById('phone').value || '').trim();
-        const topic = (document.getElementById('topic').value || '').trim();
-        const time = (document.getElementById('time').value || '').trim();
-        const msg = (document.getElementById('msg').value || '').trim();
-
-        const lines = [
-          "السلام عليكم، أود طلب موعد في عيادة الدكتور عبد الكريم أبو رمضان.",
-          `الاسم: ${name}`,
-          `الجوال: ${phone}`,
-          `سبب الزيارة: ${topic}`,
-          `الوقت المفضل: ${time}`,
-        ];
-        if (msg) lines.push(`ملاحظات: ${msg}`);
-
-        const text = encodeURIComponent(lines.join("\n"));
-        // ✅ عدّل الرقم إذا كان واتساب مختلف عن الهاتف
-        const waNumber = "966114606600";
-        const url = `https://wa.me/${waNumber}?text=${text}`;
-        window.open(url, "_blank", "noopener");
-      });
-    }
-  </script>
-</body>
-</html>
+/* =========================
+   Mobile UX Upgrade (RTL)
+   ضع هذا آخر الـCSS
+========================= */
+@media (max-width: 980px){
+
+  /* تباعد أفضل وقراءة أوضح */
+  body{ line-height:1.95; }
+  section{ padding:26px 0; }
+  .container{ padding:0 14px; }
+
+  /* Header: تبسيط + أزرار أوضح */
+  .nav{ padding:10px 0; }
+  .brand{ min-width:auto; }
+  .brand h1{ font-size:13px; }
+  .brand p{ display:none; } /* يقلل الزحمة أعلى الهاتف */
+  .actions{ min-width:auto; gap:8px; }
+
+  /* اجعل زر القائمة + زر الحجز أوضح */
+  .btn{ padding:11px 12px; border-radius:16px; font-size:13px; }
+  .btn.primary{ font-weight:900; }
+
+  /* Hero: عنوان أكبر + وصف أقصر */
+  .hero{ padding:18px 0 8px; }
+  .heroTitle{ font-size:24px; }
+  .heroSub{ font-size:14px; }
+  .tag{ font-size:11.5px; }
+
+  /* الصورة: ارتفاع مناسب للهاتف */
+  .heroImage{ min-height:240px; }
+  .heroImageBadge{
+    padding:10px;
+    border-radius:16px;
+  }
+  .heroImageBadge a.btn.primary{ padding:10px 12px; }
+
+  /* الكروت: عمود واحد على الهاتف */
+  .grid{ grid-template-columns:1fr !important; }
+  .split{ grid-template-columns:1fr; }
+
+  /* بطاقات المعلومات الصغيرة (الشريط تحت الهيرو) */
+  .miniCards{ padding:14px; }
+  .info{ border-radius:18px; padding:12px; }
+
+  /* جعل أزرار الهيرو ممتلئة العرض (أفضل لمسة) */
+  .heroBtns{ gap:10px; }
+  .heroBtns .btn{
+    width:100%;
+    justify-content:center;
+    padding:12px 14px;
+    border-radius:18px;
+  }
+
+  /* تقليل طول القوائم */
+  .list{ padding-right:18px; }
+  .list li{ margin:8px 0; }
+
+  /* مقالات: صورة أعلى + نص مرتب */
+  .articleImg{ height:140px; }
+  .articleBody p{ font-size:13.5px; }
+
+  /* نموذج الحجز: حقول أكبر */
+  input, select, textarea{
+    padding:13px 12px;
+    border-radius:16px;
+    font-size:15px;
+  }
+  textarea{ min-height:120px; }
+
+  /* الأزرار العائمة: رفعها فوق حافة السفاري + ثابتة */
+  .floatBar{
+    bottom:12px;
+    left:12px;
+    right:12px;
+    gap:10px;
+  }
+  .floatBar a{
+    padding:14px 14px;
+    border-radius:18px;
+    font-size:15px;
+  }
+
+  /* مساحة آمنة أسفل الصفحة حتى لا تغطي الأزرار العائمة المحتوى */
+  footer{ padding-bottom:90px; }
+}
+
+/* تحسين اللمس للأجهزة الصغيرة جدًا */
+@media (max-width: 420px){
+  .heroTitle{ font-size:22px; }
+  .btn{ font-size:12.5px; }
+}
+
+/* منع “تكبير تلقائي” في iOS لبعض الحقول */
+@supports (-webkit-touch-callout: none){
+  input, select, textarea{ font-size:16px; }
+}
